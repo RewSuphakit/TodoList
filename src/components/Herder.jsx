@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-function Herder() {
-  const currentPath = window.location.pathname;
+function Header() {
+  const location = useLocation();
+  const currentPath = location.pathname;
   const isActive = (path) => currentPath === path;
-  
+
   return (
-    <header className="text-black shadow-md rounded-2xl bg-gray-10">
+    <header className="text-black shadow-md rounded-2xl bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <h1 className="text-2xl font-bold tracking-wide">MINI PROJECT</h1>
         <nav>
@@ -14,23 +15,23 @@ function Herder() {
             <li>
               <Link
                 to="/"
-                className={`${isActive('/') ? 'border-b-4 border-black-500 font-bold' : 'hover:text-gray-600'} `}
+                className={`${isActive('/') ? 'border-b-4 border-black font-bold' : 'hover:text-gray-600'}`}
               >
                 Home
               </Link>
             </li>
             <li>
               <Link
-                to="/About"
-                className={`${isActive('/About') ? 'border-b-4 border-black-500 font-bold' : 'hover:text-gray-600'} `}
+                to="/about"
+                className={`${isActive('/about') ? 'border-b-4 border-black font-bold' : 'hover:text-gray-600'}`}
               >
                 About
               </Link>
             </li>
             <li>
               <Link
-                to="/ApiData"
-                className={`${isActive('/ApiData') ? 'border-b-4 border-black-500 font-bold' : 'hover:text-gray-600'} `}
+                to="/apiData"
+                className={`${isActive('/apiData') ? 'border-b-4 border-black font-bold' : 'hover:text-gray-600'}`}
               >
                 API Data
               </Link>
@@ -42,4 +43,4 @@ function Herder() {
   );
 }
 
-export default Herder;
+export default Header;

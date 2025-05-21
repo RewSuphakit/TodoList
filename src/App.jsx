@@ -6,7 +6,7 @@ function App() {
   const { fetchTodos } = useTodoContext()
   useEffect(() => {
     fetchTodos()
-  }, [fetchTodos])
+  }, [])
   return (
     <div className="container mx-auto mt-5">
      <Routers />

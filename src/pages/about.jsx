@@ -1,31 +1,40 @@
-import React from 'react'
+import React from "react";
 
-function about() {
+function About() {
   return (
-    <div>
-      <h1 className='text-2xl font-bold'>About Us</h1>
-      <div className="max-w-sm w-full lg:max-w-full lg:flex">
-  <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaaKZjTC4W1tC685hEZQ8J8VTgLOwAqI-AzA&s')" }} title="Woman holding a mug">
-  </div>
-  <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-    <div className="mb-8">
-      <p className="text-sm text-gray-600 flex items-center">
-        
-        Members only
-      </p>
-      <div className="text-gray-900 font-bold text-xl mb-2">Can coffee make you a better developer?</div>
-      <p className="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-    </div>
-    <div className="flex items-center">
-      <div className="text-sm">
-        <p className="text-gray-900 leading-none">Jonathan Reinink</p>
-        <p className="text-gray-600">Aug 18</p>
+    <div className=" bg-gradient-to-br from-white to-pink-100 p-8 rounded-2xl">
+      <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-8">
+        About Us
+      </h1>
+      <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl p-8 grid md:grid-cols-2 gap-8">
+        <div className="flex flex-col justify-center">
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            Hi, I'm Suphakit Lomlao
+          </h2>
+          <p className="text-lg text-gray-600 ">
+            มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน{" "}
+          </p>
+          <p className="text-lg text-gray-600 ">วิทยาเขตขอนแก่น</p>
+          <p className="text-lg text-gray-600 mb-4">ครุศาสตร์อุตสาหกรรมคอมพิวเตอร์</p>
+          <h3 className="text-xl font-semibold text-gray-700 mb-2">
+            Technology Used
+          </h3>
+          <ul className="list-disc list-inside text-gray-600 space-y-1">
+            <li>React</li>
+            <li>Tailwind CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div className="flex justify-center items-center">
+          <img
+            className="rounded-full w-48 h-48 border-8 border-pink-300 shadow-lg hover:scale-105 transition-transform duration-300"
+            src="https://media.tenor.com/HoB0kveWeJcAAAAe/%E0%B9%81%E0%B8%A1%E0%B8%A7%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%A3%E0%B8%B1%E0%B8%81-%E0%B9%81%E0%B8%A1%E0%B8%A7.png"
+            alt="Suphakit"
+          />
+        </div>
       </div>
     </div>
-  </div>
-</div>
-    </div>
-  )
+  );
 }
 
-export default about
+export default About;

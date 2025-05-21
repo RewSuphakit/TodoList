@@ -1,10 +1,10 @@
-import React,{useState} from 'react';
-import useTodoContext from '../hooks/useTodo';
-import { toast } from 'react-toastify';
+import React, { useState } from "react";
+import useTodoContext from "../hooks/useTodo";
+import { toast } from "react-toastify";
 
 function TodoForm() {
   const { createTodo } = useTodoContext();
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -12,18 +12,21 @@ function TodoForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text === '') {  
-      toast.warn('กรุณากรอกข้อมูลให้ครบทุกช่อง', { position: 'top-center' });
+    if (text === "") {
+      toast.warn("กรุณากรอกข้อมูลให้ครบทุกช่อง", { position: "top-center" });
       return;
     }
     createTodo(text);
-    setText('');
+    setText("");
   };
 
   return (
     <div className=" mb-4 rounded">
       <div className="text-4xl font-bold mb-4">TodoList</div>
-      <form onSubmit={handleSubmit} className="flex items-center justify-center mt-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center justify-center mt-4"
+      >
         <input
           className="p-4 w-full mr-2 shadow-sm  rounded"
           type="text"
@@ -40,7 +43,7 @@ function TodoForm() {
         <button
           type="button"
           className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded mr-2"
-          onClick={() => setText('')}   
+          onClick={() => setText("")}
         >
           Clear
         </button>

@@ -1,6 +1,5 @@
 import React,{ createContext, useState } from 'react';
 import axios from 'axios';
-
 const TodoContext = createContext();
 
 function TodoProvider({ children }) {
@@ -9,6 +8,8 @@ function TodoProvider({ children }) {
     const fetchTodos = async () => {
         const response = await axios.get('http://localhost:3000/todos');
         setTodos(response.data);
+        // console.log(response.data);
+    
     };
     
 
@@ -16,10 +17,12 @@ function TodoProvider({ children }) {
         const response = await axios.post('http://localhost:3000/todos', {
             text: text,
         });
+        
         const updatedTodos = [...todos, response.data]; 
         // ...todos คือการสร้าง array ใหม่ที่มี todos เดิมและ todo ใหม่.
         // .. คือ Spread Operator ใน JavaScript
         setTodos(updatedTodos);
+        
     };
 
    
@@ -31,6 +34,7 @@ function TodoProvider({ children }) {
             todo.id === id ? { ...todo, ...response.data } : todo
         );
         setTodos(updatedTodos);
+        
     };
 
     const deleteTodoById = async (id) => {

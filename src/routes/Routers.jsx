@@ -12,8 +12,8 @@ function Routers() {
       <div className="p-4">
         <Routes>
           <Route path="/" element={<TodoListPage />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/ApiData" element={<ApiData />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/apiData" element={<ApiData />} />
         </Routes>
       </div>
     </Router>

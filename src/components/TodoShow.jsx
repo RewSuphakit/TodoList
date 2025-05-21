@@ -3,6 +3,7 @@ import useTodoContext from '../hooks/useTodo';
 import TodoEdit from './TodoEdit';
 import { BiSolidEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
+
 function TodoShow({ todo }) {
   const { deleteTodoById } = useTodoContext();
   const [editing, setEditing] = useState(false);
