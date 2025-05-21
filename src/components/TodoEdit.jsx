@@ -5,36 +5,37 @@ function TodoEdit({ todo, onSubmit, onCancel }) {
   const { editTodoById } = useTodoContext();
   const [newTodo, setNewTodo] = useState(todo.text);
 
-  const handleChange = (event) => setNewTodo(event.target.value);
+  const handleChange = (e) => setNewTodo(e.target.value);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    editTodoById(todo.id, newTodo);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    editTodoById(todo.id, newTodo.trim());
     onSubmit();
   };
 
   return (
-    <form onSubmit={handleSubmit} className="todo-edit">
-      <label htmlFor="editTodoInput">แก้ :</label>
-      <div className="flex items-center justify-start mt-4">
-        <input
-          id="editTodoInput"
-          className="border p-2 w-full mr-2"
-          type="text"
-          value={newTodo}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="flex items-center justify-end mt-4">
+    <form
+      onSubmit={handleSubmit}
+      className="w-full flex flex-col md:flex-row items-center gap-2 p-3 rounded-lg "
+    >
+      <input
+        id="editTodoInput"
+        className="flex-1 border border-gray-300 p-2 rounded-md text-gray-800"
+        type="text"
+        value={newTodo}
+        onChange={handleChange}
+        placeholder="แก้ไขรายการ"
+      />
+      <div className="flex gap-2">
         <button
-          className="bg-green-500 text-white px-4 py-2 rounded mr-2 disabled:opacity-50"
+          className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md disabled:opacity-50"
           type="submit"
           disabled={!newTodo.trim()}
         >
           Save
         </button>
         <button
-          className="bg-gray-400 text-white px-4 py-2 rounded"
+          className="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-md"
           type="button"
           onClick={onCancel}
         >

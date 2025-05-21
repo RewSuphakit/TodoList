@@ -1,4 +1,4 @@
-import React,{ createContext, useState,useEffect } from 'react';
+import React,{ createContext, useState } from 'react';
 import axios from 'axios';
 
 const TodoContext = createContext();
@@ -10,15 +10,15 @@ function TodoProvider({ children }) {
         const response = await axios.get('http://localhost:3000/todos');
         setTodos(response.data);
     };
-     useEffect(() => {
-        fetchTodos();
-    }, []);
+    
 
       const createTodo = async (text) => {
         const response = await axios.post('http://localhost:3000/todos', {
             text: text,
         });
-        const updatedTodos = [...todos, response.data];
+        const updatedTodos = [...todos, response.data]; 
+        // ...todos คือการสร้าง array ใหม่ที่มี todos เดิมและ todo ใหม่.
+        // .. คือ Spread Operator ใน JavaScript
         setTodos(updatedTodos);
     };
 

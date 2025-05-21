@@ -1,49 +1,51 @@
-import React, { useState } from 'react'
-import useTodoContext from '../hooks/useTodo'
-import TodoEdit from './TodoEdit'
-
+import React, { useState } from 'react';
+import useTodoContext from '../hooks/useTodo';
+import TodoEdit from './TodoEdit';
+import { BiSolidEdit } from "react-icons/bi";
+import { MdDelete } from "react-icons/md";
 function TodoShow({ todo }) {
-  const { deleteTodoById } = useTodoContext()
-  const [editing, setEditing] = useState(false)
+  const { deleteTodoById } = useTodoContext();
+  const [editing, setEditing] = useState(false);
 
   const handleDeleteClick = () => {
-    deleteTodoById(todo.id)
-  }
+    deleteTodoById(todo.id);
+  };
 
   const handleEditClick = () => {
-    setEditing(true)
-  }
+    setEditing(true);
+  };
 
   const handleSubmit = () => {
-    setEditing(false)
-  }
-
-  let content = <h3>{todo.text}</h3>
-  if (editing) {
-    content = <TodoEdit todo={todo} onSubmit={handleSubmit} onCancel={() => setEditing(false)} />
-  }
+    setEditing(false);
+  };
 
   return (
-    <div className='p-4  rounded shadow-sm'>
-      {content}
-      {!editing && (
-        <div className='flex justify-end mt-4'>
-          <button
-            className='bg-blue-500 text-white px-4 py-2 rounded mr-2'
-            onClick={handleEditClick}
-          >
-            Edit
-          </button>
-          <button
-            className='bg-red-500 text-white px-4 py-2 rounded'
-            onClick={handleDeleteClick}
-          >
-            Delete
-          </button>
-        </div>
+    <div className="w-full flex justify-between items-center gap-2  rounded-lg ">
+      {editing ? (
+        <TodoEdit todo={todo} onSubmit={handleSubmit} onCancel={() => setEditing(false)} />
+      ) : (
+        <>
+          <div className="text-lg text-gray-800 break-words p-4 overflow-auto">{todo.text}</div>
+          <div className="flex gap-2">
+            <button
+              className="bg-yellow-500 hover:bg-yellow-600 transition-colors text-white px-4 py-2 rounded"
+              onClick={handleEditClick}
+            >
+              <BiSolidEdit size={20}  />
+              
+            </button>
+            <button
+              className="bg-red-500 hover:bg-red-600 transition-colors text-white px-4 py-2 rounded"
+              onClick={handleDeleteClick}
+            >
+            <MdDelete size={20} />
+            </button>
+          </div>
+        </>
       )}
     </div>
-  )
+  );
 }
 
-export default TodoShow
+export default TodoShow;
+// Compare this snippet from src/components/TodoShow.jsx: 
