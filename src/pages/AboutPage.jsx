@@ -1,6 +1,6 @@
 import React from "react";
 
-function About() {
+function AboutPage() {
   return (
     <div className=" bg-gradient-to-br from-white to-pink-100 p-8 rounded-2xl">
       <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-8">
@@ -37,4 +37,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutPage;

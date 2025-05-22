@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TodoListPage from '../pages/TodoListPage';
-import About from '../pages/About'; 
-import ApiData from '../pages/ApiData';
+import About from '../pages/AboutPage'; 
+import ApiData from '../pages/ApiDataPage';
 import Herder from '../components/Herder';
 import React from 'react'
 

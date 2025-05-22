@@ -1,6 +1,6 @@
 import React,{ useState,useEffect} from 'react'
 import axios from 'axios'
-function ApiData() {
+function ApiDataPage() {
   const [data, setData] = useState([])
  const response = async () => {
     const res = await axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -26,4 +26,4 @@ function ApiData() {
   )
 }
 
-export default ApiData
+export default ApiDataPage
