@@ -9,7 +9,6 @@ function TodoProvider({ children }) {
         const response = await axios.get('http://localhost:3000/todos');
         setTodos(response.data);
         // console.log(response.data);
-    
     };
     
 
@@ -20,7 +19,7 @@ function TodoProvider({ children }) {
         
         const updatedTodos = [...todos, response.data]; 
         // ...todos คือการสร้าง array ใหม่ที่มี todos เดิมและ todo ใหม่.
-        // .. คือ Spread Operator ใน JavaScript
+        // ... คือ Spread Operator ใน JavaScript
         setTodos(updatedTodos);
         
     };

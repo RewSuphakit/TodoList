@@ -4,7 +4,7 @@ import TodoEdit from './TodoEdit';
 import { BiSolidEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 
-function TodoShow({ todo }) {
+function TodoAction({ todo }) {
   const { deleteTodoById } = useTodoContext();
   const [editing, setEditing] = useState(false);
 
@@ -48,5 +48,4 @@ function TodoShow({ todo }) {
   );
 }
 
-export default TodoShow;
-// Compare this snippet from src/components/TodoShow.jsx: 
+export default TodoAction;

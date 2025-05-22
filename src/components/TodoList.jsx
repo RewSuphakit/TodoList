@@ -1,6 +1,6 @@
 import React from 'react';
 import useTodoContext from '../hooks/useTodo';
-import TodoShow from './TodoShow';
+import TodoAction from './TodoAction';
 
 function TodoList() {
   const { todos } = useTodoContext();
@@ -12,7 +12,7 @@ function TodoList() {
           key={todo.id}
           className="w-full border border-gray-300 p-4 rounded-md  shadow-sm bg-white"
         >
-          <TodoShow todo={todo} />
+          <TodoAction todo={todo} />
         </div>
       ))}
     </div>
