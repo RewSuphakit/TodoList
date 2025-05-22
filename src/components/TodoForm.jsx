@@ -6,12 +6,12 @@ function TodoForm() {
   const { createTodo } = useTodoContext();
   const [text, setText] = useState("");
 
-  const handleChange = (e) => {
-    setText(e.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setText(event.target.value);
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (text === "") {
       toast.warn("กรุณากรอกข้อความ", { position: "top-center" });
       return;
@@ -23,19 +23,23 @@ function TodoForm() {
   return (
     <div className=" mb-4 rounded">
       <div className="bg-gradient-to-br from-white to-pink-100 p-8 rounded-2xl shadow-lg flex items-center justify-center">
-          <div className="text-4xl font-bold mb-4 flex items-center justify-center">TodoList </div>
-          <div className="text-4xl font-bold mb-4 ml-4"><FaListCheck /></div>
+        <div className="text-4xl font-bold mb-4 flex items-center justify-center">
+          TodoList{" "}
+        </div>
+        <div className="text-4xl font-bold mb-4 ml-4">
+          <FaListCheck />
+        </div>
       </div>
-    
+
       <form
         onSubmit={handleSubmit}
         className="flex items-center justify-center mt-4"
       >
         <input
-          className="p-4 w-full mr-2 shadow-sm  rounded"
+          className="p-4 w-full mr-2 shadow-sm rounded"
           type="text"
           value={text}
-          onChange={handleChange}
+          onChange={(e) => setText(e.target.value)}
           placeholder="เพิ่มรายการ Todo"
         />
         <button
