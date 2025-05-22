@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useTodoContext from "../hooks/useTodo";
 import { toast } from "react-toastify";
-
+import { FaListCheck } from "react-icons/fa6";
 function TodoForm() {
   const { createTodo } = useTodoContext();
   const [text, setText] = useState("");
@@ -13,7 +13,7 @@ function TodoForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text === "") {
-      toast.warn("กรุณากรอกข้อมูลให้ครบทุกช่อง", { position: "top-center" });
+      toast.warn("กรุณากรอกข้อความ", { position: "top-center" });
       return;
     }
     createTodo(text);
@@ -22,7 +22,11 @@ function TodoForm() {
 
   return (
     <div className=" mb-4 rounded">
-      <div className="text-4xl font-bold mb-4">TodoList</div>
+      <div className="bg-gradient-to-br from-white to-pink-100 p-8 rounded-2xl shadow-lg flex items-center justify-center">
+          <div className="text-4xl font-bold mb-4 flex items-center justify-center">TodoList </div>
+          <div className="text-4xl font-bold mb-4 ml-4"><FaListCheck /></div>
+      </div>
+    
       <form
         onSubmit={handleSubmit}
         className="flex items-center justify-center mt-4"

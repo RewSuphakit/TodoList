@@ -1,29 +1,9 @@
 {
   "todos": [
     {
-      "id": "fefa",
-      "text": "SSSSSSSSSSSSSSSSSSSSSSSS"
-    },
-    {
-<<<<<<< HEAD
-      "id": "0140",
-      "text": "asdasdasd"
-=======
-      "id": "d64c",
-      "text": "SSSSSSSSSSSSSSSSSSSSSS"
-    },
-    {
-      "id": "39ae",
-      "text": "AAAAAAAAAAAAAAAAAA"
-    },
-    {
-      "id": "5b8a",
-      "text": "AAAAAAAAAAAAAAAAA"
-    },
-    {
-      "id": "9530",
-      "text": "AAAAALLLLLLLLLLLLLLLLL"
->>>>>>> 467b1fe87d58c858a73c1c3201caf7d25111e6df
+      "id": "8041",
+      "text": "aaaa",
+      "completed": false
     }
   ]
 }

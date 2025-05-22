@@ -26,7 +26,14 @@ function TodoAction({ todo }) {
         <TodoEdit todo={todo} onSubmit={handleSubmit} onCancel={() => setEditing(false)} />
       ) : (
         <>
-          <div className="text-lg text-gray-800 break-words p-4 overflow-auto">{todo.text}</div>
+          <div className="text-lg text-gray-800 break-words p-4 overflow-auto">
+            {todo.completed ? (
+              <span className="line-through text-gray-500">{todo.text}</span>
+            ) : (
+              todo.text
+            )}
+           
+            </div>
           <div className="flex gap-2">
             <button
               className="bg-yellow-500 hover:bg-yellow-600 transition-colors text-white px-4 py-2 rounded"

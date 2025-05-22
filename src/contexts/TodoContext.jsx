@@ -15,6 +15,7 @@ function TodoProvider({ children }) {
       const createTodo = async (text) => {
         const response = await axios.post('http://localhost:3000/todos', {
             text: text,
+            completed: false,
         });
         
         const updatedTodos = [...todos, response.data]; 
@@ -25,9 +26,9 @@ function TodoProvider({ children }) {
     };
 
    
-    const editTodoById = async (id, newText) => {
+    const editTodoById = async (id, newText, completed) => {
         const response = await axios.put(`http://localhost:3000/todos/${id}`, {
-            text: newText
+            text: newText,completed: completed
         });
         const updatedTodos = todos.map((todo) =>
             todo.id === id ? { ...todo, ...response.data } : todo
