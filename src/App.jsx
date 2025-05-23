@@ -3,10 +3,10 @@ import useTodoContext from './hooks/useTodo'
 import Routers from './routes/Routers'
 
 function App() {
-  const { fetchTodos } = useTodoContext()
+  const { fetchTodos } = useTodoContext();
   useEffect(() => {
-    fetchTodos()
-  }, [])
+    fetchTodos();
+  }, []);
   return (
    
     <div className="container mx-auto mt-5 ">

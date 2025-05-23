@@ -6,14 +6,14 @@ function TodoProvider({ children }) {
     const [todos, setTodos] = useState([]);
 
     const fetchTodos = async () => {
-        const response = await axios.get('http://localhost:3000/todos');
+        const response = await axios.get('http://localhost:3001/todos');
         setTodos(response.data);
         // console.log(response.data);
     };
     
 
       const createTodo = async (text) => {
-        const response = await axios.post('http://localhost:3000/todos', {
+        const response = await axios.post('http://localhost:3001/todos', {
             text: text,
             completed: false,
         });
@@ -27,7 +27,7 @@ function TodoProvider({ children }) {
 
    
     const editTodoById = async (id, newText, completed) => {
-        const response = await axios.put(`http://localhost:3000/todos/${id}`, {
+        const response = await axios.put(`http://localhost:3001/todos/${id}`, {
             text: newText,completed: completed
         });
         const updatedTodos = todos.map((todo) =>
@@ -38,7 +38,7 @@ function TodoProvider({ children }) {
     };
 
     const deleteTodoById = async (id) => {
-        await axios.delete(`http://localhost:3000/todos/${id}`);
+        await axios.delete(`http://localhost:3001/todos/${id}`);
         const filteredTodos = todos.filter((todo) => todo.id !== id);
         setTodos(filteredTodos);
     };

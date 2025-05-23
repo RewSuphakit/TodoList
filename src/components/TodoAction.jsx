@@ -13,7 +13,7 @@ function TodoAction({ todo }) {
   };
 
   const handleEditClick = () => {
-    setEditing(true);
+    setEditing(!editing);
   };
 
   const handleSubmit = () => {

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "todos": [
     {
       "id": "24ed",
@@ -11,4 +12,7 @@
       "completed": false
     }
   ]
+=======
+  "todos": []
+>>>>>>> 051d4060938f86db6daaf92648bc8dce14cd6cae
 }
